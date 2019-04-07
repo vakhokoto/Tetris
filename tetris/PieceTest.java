@@ -62,6 +62,16 @@ public class PieceTest {
 		assertTrue(Arrays.equals(new int[] {0, 0, 1}, s.getSkirt()));
 		assertTrue(Arrays.equals(new int[] {1, 0}, sRotated.getSkirt()));
 	}
-	
-	
+
+
+	@Test
+	public void testSampleSkirt1() {
+		// Note must use assertTrue(Arrays.equals(... as plain .equals does not work
+		// right for arrays.
+		assertTrue(Arrays.equals(new int[] {0, 0, 0}, pyr1.getSkirt()));
+		assertTrue(Arrays.equals(new int[] {1, 0, 1}, pyr3.getSkirt()));
+
+		assertTrue(Arrays.equals(new int[] {0, 0, 1}, s.getSkirt()));
+		assertTrue(Arrays.equals(new int[] {1, 0}, sRotated.getSkirt()));
+	}
 }

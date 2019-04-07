@@ -68,16 +68,6 @@ public class BoardTest {
 		assertEquals(errorLog, Board.PLACE_ROW_FILLED);
 		int max = br.getMaxHeight();
 		assertEquals(2, max);
-		for (int i=5; i>-1; -- i){
-			for (int j=0; j<4; ++j){
-				if (br.getGrid(j, i)){
-					System.out.print(1 + " ");
-				} else {
-					System.out.print(0 + " ");
-				}
-			}
-			System.out.println();
-		}
 		int num = br.clearRows();
 		assertEquals(2, num);
 		br.undo();

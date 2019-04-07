@@ -32,14 +32,6 @@ public class JBrainTetris extends JTetris{
                 TPoint[] b1 = currentPiece.getBody();
                 TPoint[] b2 = move.piece.getBody();
                 if (!currentPiece.equals(move.piece)) {
-                    System.out.println("body 1:");
-                    for (int i=0; i<4; ++i){
-                        System.out.println(b1[i].x + " " + b1[i].y);
-                    }
-                    System.out.println("body 2:");
-                    for (int i=0; i<4; ++i){
-                        System.out.println(b2[i].x + " " + b2[i].y);
-                    }
                     super.tick(ROTATE);
                 }
                 if (currentX < move.x) {
