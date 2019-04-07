@@ -55,6 +55,36 @@ public class BoardTest {
 	// Make  more tests, by putting together longer series of 
 	// place, clearRows, undo, place ... checking a few col/row/max
 	// numbers that the board looks right after the operations.
-	
+
+	@Test
+	public void testSample3() {
+		Board br = new Board(4,6);
+		int errorLog;
+		Piece[] p = Piece.getPieces();
+		errorLog = br.place(p[5], 0, 0);
+		assertEquals(errorLog, Board.PLACE_OK);
+		br.commit();
+		errorLog = br.place(p[5].fastRotation(), 2, 0);
+		assertEquals(errorLog, Board.PLACE_ROW_FILLED);
+		int max = br.getMaxHeight();
+		assertEquals(2, max);
+		for (int i=5; i>-1; -- i){
+			for (int j=0; j<4; ++j){
+				if (br.getGrid(j, i)){
+					System.out.print(1 + " ");
+				} else {
+					System.out.print(0 + " ");
+				}
+			}
+			System.out.println();
+		}
+		int num = br.clearRows();
+		assertEquals(2, num);
+		br.undo();
+		br.place(p[0], 0, 2);
+		br.commit();
+		int a = br.dropHeight(p[0], 0);
+		assertEquals(6, a);
+	}
 	
 }
