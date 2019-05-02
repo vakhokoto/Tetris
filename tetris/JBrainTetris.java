@@ -75,7 +75,6 @@ public class JBrainTetris extends JTetris{
     public Piece pickNextPiece(){
         int max = adversary.getValue();
         int rNum = r.nextInt(SLIDER_MAX_VALUE - 1) + 1;
-        System.out.println(max + " " + rNum);
         if (rNum <= max){
             return getNextPiece();
         } else {
@@ -104,7 +103,7 @@ public class JBrainTetris extends JTetris{
                 curPiece = curPiece.fastRotation();
             }
         }
-        return (move != null ?move.piece:null);
+        return (move != null ?move.piece:super.pickNextPiece());
     }
 
     public static void main(String[] atgs) {

@@ -130,8 +130,6 @@ public class Piece {
 			int curX = body[i].x;
 			int curY = body[i].y;
 			newBody[i] = new TPoint(newW - curY - 1, curX);
-			if (newW - curY - 1 < 0 || curX < 0)
-				System.out.println((newW - curY - 1) + " " + curX);
 		}
 		answer = new Piece(newBody);
 		return answer;
